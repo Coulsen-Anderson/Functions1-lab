@@ -296,6 +296,15 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
+function theEliminator(contestants, loser){
+  for(let i = 0; i < contestants.length; i++){
+    if(contestants[i] === loser){
+      contestants.splice(i, 1)
+    }
+  }
+  return contestants
+}
+console.log(theEliminator(contestants, loser))
 
 
 ////////////////// PROBLEM 17 ////////////////////
@@ -318,6 +327,16 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+function emailCheck(email){
+  email = String(email).trim()
+  console.log(email)
+  if(email.includes('@')){
+    return 'email verified'
+  }else {
+    return 'must provide a valid email address'
+  }
+}
+console.log(emailCheck('blablabla@gmail.com'))
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
@@ -337,12 +356,21 @@ let sampleString = "Hi, my name is Kylo."
 
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,4,5,6,7,8]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
+const arrayIsAscending = function(numbers){
+  for (i = 0; i < numbers.length; i++){ 
+    if (numbers[i] >= numbers[i+1]){
+      return false
+    }
+  }
+  return true
+}
+
 
 
 ////////////////// PROBLEM 22 ////////////////////
